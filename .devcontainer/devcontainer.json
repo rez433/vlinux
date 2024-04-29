@@ -2,10 +2,6 @@
   "name": "Ubuntu 22.04",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {
-  },
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
-  "workspaceFolder": "/workspace",
-  
-  "runArgs": ["--userns=keep-id"],
-  "containerUser": "vscode"
+    "ghcr.io/elanhasson/devcontainer-features/dotnet-aspire-daily:1": {}
+  }
 }
