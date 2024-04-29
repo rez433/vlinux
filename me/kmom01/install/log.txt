@@ -1,0 +1,175 @@
+******************************** 
+************ KMOM01 ************
+********************************
+Uppgift:
+reza@debian:~$ uname -a
+Linux debian 5.10.0-8-amd64 #1 SMP Debian 5.10.46-4 (2021-08-03) x86_64 GNU/Linux
+
+
+
+Installera Debian i virtualbox
+
+A1- Installera virtualbox
+
+A2- ladda ned debian iso-fil anpassad för instllation via net,
+https://www.debian.org/distrib/netinst
+
+A3- installera debian i virtualbox med hjälp av gui installering
+
+
+A4- instllera Guest Additions
+
+A4.1- installera först build-essential och dkms
+---------------------------------------------------------------------------
+apt-get install build-essential module-assistant dkms
+---------------------------------------------------------------------------
+
+A4.2- förbereder för att bygga en module
+--------------------------------------
+m-a prepare
+--------------------------------------
+
+A4.3- installera Guest Additions via instalera vboxlinuxadditions
+----------------------------------------------------------------
+mount /media/cdrom
+sh /media/cdrom/VBoxLinuxAdditions.run
+----------------------------------------------------------------
+
+============================================================================================
+============================================================================================
+
+För att installera SSH server
+
+B1- Installera sudo utan lösenord:
+-----------------------------------------------------------------------------------------------------------------------
+su --command "apt-get install sudo; echo '$USER ALL=NOPASSWD: ALL' > '/etc/sudoers.d/$USER'; cat /etc/sudoers.d/$USER"
+-----------------------------------------------------------------------------------------------------------------------
+
+
+B2- Instllera SSH
+--------------------------------------------
+sudo apt-get install openssh-server
+--------------------------------------------
+
+
+B3- för att se status på ssh-server
+--------------------------------------------
+sudo service ssh status
+--------------------------------------------
+
+
+B4- för att logga in på ssh server på bth.se
+------------------------------------------
+ssh rere20@ssh.student.bth.se
+------------------------------------------
+
+
+B5- port forwarding:
+
+
+
+
+Name	Host Port	Guest Port
+http	8080	    80
+ssh	    2222	    22
+
+
+
+============================================================================================
+============================================================================================
+
+sessions med tmux
+
+C1- Installera tmux 
+--------------------------------
+sudo apt-get install tmux
+
+#check version
+tmux -V
+
+#manuals
+man tmux
+--------------------------------
+
+
+C2- Starta, detacha och attacha till en session
+-------------------------
+#start session
+tmux
+
+#list alla sessions
+tmux ls
+
+# attach to a session
+tmux a -t 0
+tmux attach -t 0
+
+
+#detach from a session, click 
+ctrl-b d
+-------------------------
+
+
+C3- Namngivna sessioner
+--------------------------------------------
+#för att namnge
+tmux new -s Name
+
+# för att attach to session with namn
+tmux attach -t Name
+--------------------------------------------
+
+
+C4- using alias to do attach and creating
+--------------------------------------------
+alias tbs='tmux new -s Name'
+alias tb='tmux attach -t Name'
+--------------------------------------------
+
+
+C4- ta bort en session or server
+-------------------------------------------
+#session with index number
+tmux kill-session -t 0
+
+#session with name
+tmux kill-session -t Name
+
+#to kill server and all its sessions
+tmux kill-server
+-------------------------------------------
+
+
+
+
+******************************** 
+************ KMOM02 ************
+********************************
+krav 2.
+rsync -av -e "ssh -p 2222" ~/dbwebb-kurser/vlinux/me/redovisa/ reza@me.linux.se:/home/reza/vhosts/me.linux.se/htdocs/
+
+krav 3.
+lynx me.linux.se
+
+
+
+
+
+
+
+
+
+
+******************************** 
+************ KMOM03 ************
+********************************
+
+
+
+
+
+
+
+******************************** 
+************ KMOM04 ************
+********************************

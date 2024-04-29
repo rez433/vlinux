@@ -1,0 +1,12 @@
+******************************** 
+************ KMOM02 ************
+********************************
+krav 2.
+rsync -av -e "ssh -p 2222" ~/dbwebb-kurser/vlinux/me/redovisa/ reza@me.linux.se:/home/reza/vhosts/me.linux.se/htdocs/
+
+krav 3.
+lynx me.linux.se
+
+
+copy me.linux.se.conf into kursrepo:
+rsync -av -e "ssh -p 2222" reza@me.linux.se:/etc/apache2/sites-enabled/me.linux.se.conf ~/dbwebb-kurser/vlinux/me/kmom02/vhost

@@ -1,0 +1,39 @@
+body {
+    margin: 8px auto;
+    background: #fff;
+    width: 700px;
+}
+
+.bild {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    padding: 2rem;
+    height: 4rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 1rem 3rem;
+}
+
+nav a:hover {
+    background-color: rgb(120, 160, 122);
+    color: white;
+}
+
+.current {
+    background-color: rgb(49, 61, 61);
+    color: white;
+}

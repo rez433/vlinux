@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8" />
+        <title>Redovisning av kursmoment i kursen VLinux</title>
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="me.html">Me</a>
+                <a href="redovisning.html">Redovisning</a>
+                <a href="om.html">Om</a>
+            </nav>
+        </header>
+
+        <article>
+            <header>
+                <h1>Redovisning av kursmoment i kursen vlinux</h1>
+            </header>
+
+            <section>
+                <h2>Kmom01</h2>
+                <p>
+                    länk till videon på terminalen:
+                    <a href="https://asciinema.org/a/Es13FhPKEAkNdILpEa6UCNDvA">asciinema record från terminalen</a>
+                </p>
+                <p>
+                    1) Är du sedan tidigare bekant med Unix, Linux, Debian och/eller terminalen? <br>
+                    lite, använder pop os (debian distro) och har använt terminalen för underhålla datorn.
+                </p>
+                <p>
+                    2) Hur känns det med Unix-kommandon på terminalen, är det udda eller bekvämt?<br>
+                    Det är bekvämt och förutom kurs-material som är väldig bra, finns gott om information på nätet. så man känner sig trygg att man hittar all information som behövs för att lära sig mer.
+                </p>
+                <p>
+                    3) Valde du att köra standard med VirtualBox och Debian eller hur gjorde du? <br>
+                    yes, installerade enligt instruktionen förutom ram-minnet som jag tilldelat 2gb. Och språket som jag ville ha på engelska. Använde "dpkg-reconfigure locales" för att ändra på språket.
+                </p>
+                <p>
+                    4) Hur kändes det att jobba med VirtualBox och ser du fördelar med det arbetssättet?<br>
+                    Virtualbox känns samma som vanlig dator med os. Det som är fördelar är att man kan testa och köra olika os utan risk att installera om sin dator och programvaror. Allt händer i virtualbox och man kan ha många virtual machines och testa och köra vilket program som helst.
+                    Och Debin fungerar väldig smidig i VirtualBox. 
+                </p>
+                <p>
+                    5) ur gick det att installera Guest Additions?<br>
+                    Det gick smidig utan krångel. Allt gick enligt instruktionen.
+                </p>
+
+                <p>
+                    6) Var det något som krånglade eller tog extra mycket tid?<br>
+                    Inget som krånglat. 
+                </p>
+            </section>
+
+            <section>
+                <h2>Kmom02</h2>
+                <p>1) Hur känns konceptet med Apache name-based Virtual Hosts? Känner du igen det sedan tidigare?<br>
+                det är bra att ha flera virtuella host på samma maskin. Hittils har vi skapat 2 st host (linux.dbwebb.se, me.linux.se) på samma server och man kan använda båda två utan problem.
+                </p>
+                <p>2) Det blir allt fler kommandon i terminalen, hur känns det med terminalen och dess kommandon?<br>
+                Det känns bra och det märks att det har blivit som en vana redan nu att läsa manualet för varje kommando och läsa om olika options som finns i dem. 
+                </p>
+                <p>3)Gick det bra med ssh-nycklar och rsync över ssh?<br>
+                ja det gick bra. Hade fastnat lite på copiering med rsync i uppgifterna där jag fick fel meddelandet att "Permission Denied". Kollade igenom instruktionen och det löste sig när det angets "ssh -p 2222".
+                </p>
+                <p>4) Hur kändes det att jobba med tmux?<br>
+                Det känns ok, det är roligt att ha flera window i samma terminal. Särskillt att ha en persistant tmux session är bra.
+                </p>
+                <p>5) Reflektera över hur du känner inför Unix som operativsystem så här långt?<br>
+                Tycker att det fungerar bra och särskillt debian som server är väldigt kraftful system och hittils har det varit smidigt och utan krångel. Nu som vi läser om linux commands och debian som os känns det väldigt kraftful och stabilt med otrolig mycket möjligheter att justera systemet. Det kan vara en light eller en gaming system så kommer unix att köra friktionless.
+                </p>
+            </section>
+
+            <section>
+                <h2>Kmom03</h2>
+                <p>
+                    1) Är detta din första bekantskap med skriptprogrammering i Bash?<br>
+                    ja, Vi har skrivit commands i terminalen tidigare men första gången att skapa skript-filen.
+                </p>
+                <p>
+                    2) Berätta om din uppfattning om Bash som programmeringsmiljö, relatera till andra programspråk du kan. <br>
+                    Bash språket har liknande struktur som andra c-familj språken. T.ex. while-loop, for in  och for-loop är nästan samma som andra programmeringspråk. T.ex. man skriver specefik "do" och "done" istället för curly-braces i Javascript. Man kan skicka parametrar till function och den har extra flexibilitet att de parametrar kan tas emot via varjablar liksom $1, $2 ...
+                </p>
+                <pre>
+                <code>
+                    function app-loop
+                    {
+                        for (( i=$1; i&lt;=$2; i++))
+                        do
+                            echo "$i"
+                        done
+                    }
+                </code>
+            </pre>
+                <p>
+                    3) Vilka möjligheter/utmaningar ser du med denna typen av skriptprogrammering? <br>
+                    möjligheterna är många liksom att automatisera många funktioner i en os. Beroende på ens kunskap i terminalen kan denna person skriva och köra de funktioner i en och samma skript fil. Liksom vi har använt bash-skript i docker för att uppdatera os och sedan installer några package och till och med köra några kommandon.
+                    Utmaningar är att man behöver lära sig mycket om linux som os för att skriva ett skript och debugga det. 
+                </p>
+                <p>
+                    4) Var det något som var extra svårt eller utmanande i uppgifterna?
+                    Har du arbetat med Docker innan? <br>
+                    Att skriva skript-filen var lite klurig eftersom jag använde example skriptet från instruktionen som bas för mitt skript och kunde inte ta emot arguemnt i funktionen. Det tog mig lite tid att förstå problemet och debugga det. I bas skriptet skickas argument som string och inte som list. ändrade "$#" till "$@".
+                    Jag har inte jobbat med docker tidigare men det är bra teknologi.
+                </p>
+                <p>
+                    5) Anser du att det är någon fördel/nackdel med Docker om du jämför med VirtualBox? <br>
+                    Som vi läste i instruktionen finns det flera fördelar med docker, att den är lite och använder systemet resurser istället för virtualbox som skapar en hel os. Docker container är lite och kan delas ut och använas enkelt.
+                </p>
+            </section>
+
+            <section>
+                <h2>Kmom04</h2>
+                <p></p>
+            </section>
+
+            <section>
+                <h2>Kmom05</h2>
+                <p></p>
+            </section>
+
+            <section>
+                <h2>Kmom06</h2>
+                <p></p>
+            </section>
+        </article>
+
+        <footer>
+            <p>@Rezaee 2021</p>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
